@@ -4079,6 +4079,16 @@ input, select, textarea {
 				padding: 3.25em 1.5em 1.25em 1.5em;
 			}
 
+		/* Dates */
+
+		ul.dates li {
+			padding-left: 6em;
+		}
+
+		ul.dates h3 {
+			margin: 0 0 0.5em 0;
+		}
+		
 		/* Header */
 
 			#header {

@@ -4081,14 +4081,18 @@ input, select, textarea {
 
 		/* Dates */
 
-		ul.dates li {
-			padding-left: 6em;
-		}
+			ul.dates {
+				padding: 0 0 0 0;
+			}
 
-		ul.dates h3 {
-			margin: 0 0 0.5em 0;
-		}
-		
+			ul.dates li {
+				padding-left: 6em;
+			}
+
+			ul.dates h3 {
+				margin: 0 0 0.5em 0;
+			}
+
 		/* Header */
 
 			#header {

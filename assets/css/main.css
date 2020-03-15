@@ -3638,7 +3638,7 @@ input, select, textarea {
 		width: 100%;
 		z-index: 100;
 	}
-
+		
 		#header h1 {
 			height: inherit;
 			left: 1.25em;
@@ -3646,12 +3646,13 @@ input, select, textarea {
 			margin: 0;
 			position: absolute;
 			top: 0;
+			color: rgba(0, 0, 0, 0);
 		}
-
+		
 		#header nav {
 			position: absolute;
 			right: 1em;
-			top: 0;
+			top: 1em;
 		}
 
 			#header nav ul {
@@ -4097,6 +4098,10 @@ input, select, textarea {
 
 			#header {
 				display: none;
+			}
+
+			#header h1 {
+				color: #ffffff;
 			}
 
 		/* Banner */

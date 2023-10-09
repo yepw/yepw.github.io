@@ -98,9 +98,9 @@ input, select, textarea {
 	}
 
 	body, input, select, textarea {
-		color: rgba(255, 255, 255, 0.95);
+		color: rgba(255, 255, 255);
 		font-family: "Roboto", Helvetica, sans-serif;
-		font-size: 15pt;
+		font-size: 16pt;
 		font-weight: 100;
 		line-height: 1.75em;
 	}
@@ -112,7 +112,7 @@ input, select, textarea {
 		transition: border-color 0.2s ease-in-out, color 0.2s ease-in-out;
 		border-bottom: dotted 1px;
 		/* color: #e44c65; */
-		color: rgba(255, 255, 255, 0.95);
+		color: rgba(255, 255, 255);
 		text-decoration: none;
 	}
 

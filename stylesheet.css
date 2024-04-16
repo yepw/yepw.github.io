@@ -1,0 +1,120 @@
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    line-height: 1.5em;
+    font-size: 18px;
+    margin:20px;
+    padding:0;
+}
+
+a {
+}
+
+a:link {
+    text-decoration: none;
+    /*border-bottom: 1px dotted;*/
+    color: #005EB8;
+    /*005EB8*/
+}
+
+a:hover {
+    border-bottom: 1px gray dotted;
+    /*color:#fff;*/
+}
+
+a:visited {
+    color: #005EB8;
+}
+
+a.other_author {
+    color: #000;
+}
+
+strong {
+    font-weight: bold;
+}
+
+h2 {
+    margin: 0;
+    font-weight: normal;
+    font-size: 25px;
+}
+
+.papertitle {
+    font-weight: bold;
+    color: #000;
+}
+
+.conf{
+    color: #5D6D7E;
+    font-style: italic;
+}
+
+.name {
+    padding-top: 40px;
+    margin: 0;
+    font-size: 32px;
+}
+
+.one {
+    width: 265px;
+    height: 160px;
+    position: relative;
+    overflow: hidden;
+}
+
+.two {
+    width: 265px;
+    height:160px;
+    position: absolute;
+    transition: opacity .2s ease-in-out;
+    -moz-transition: opacity .2s ease-in-out;
+    -webkit-transition: opacity .2s ease-in-out;
+}
+
+.fade {
+    transition: opacity .2s ease-in-out;
+    -moz-transition: opacity .2s ease-in-out;
+    -webkit-transition: opacity .2s ease-in-out;
+}
+
+span.highlight {
+    background-color: #ffffd0;
+}
+
+.bio-image-cropper {
+    width: 70%;
+    height: 70%;
+    position: relative;
+    overflow: hidden;
+    border-radius: 60%;
+    margin-left: auto;
+    margin-right: auto;
+}
+  
+.bio-image-cropper img {
+    transform: scale(1.5) translate(-2%, 5%);
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.authors {
+    font-size: 18px;
+    color: #5D6D7E;
+}
+
+.authors a {
+    color: #5D6D7E;
+}
+
+/* .image-cropper {
+    width: 70%;
+    height: 70%;
+    position: relative;
+    overflow: hidden;
+    border-radius: 60%;
+}
+  
+.image-cropper img {
+    transform: scale(1.5) translate(-2%, 5%);
+} */

@@ -76,14 +76,77 @@
             style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
             <tbody>
 
-              <tr onmouseout="mc_stop()" onmouseover="mc_start()">
+              <tr onmouseout="coverage_stop()" onmouseover="coverage_start()">
+                <td style="padding:10px;width:25%;vertical-align:middle">
+                  <div class="one">
+                    <div class="two" id='coverage_img' style="transform: scale(1.2) ">
+                        <video width=100% muted autoplay loop>
+                          <source src="images/icra25_after.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                         </video>
+                    </div>
+                      <img src='images/icra25_before.png'  width="318" style="margin-left: -28px; margin-top: -16px">
+                  </div>
+                  <script type="text/javascript">
+                    function coverage_start() {
+                      document.getElementById('coverage_img').style.opacity = "1";
+                    }
+
+                    function coverage_stop() {
+                      document.getElementById('coverage_img').style.opacity = "0";
+                    }
+                    coverage_stop()
+                  </script>
+                </td>
+                <td style="padding:20px;width:75%;vertical-align:middle">
+                  <a target="_blank"href="TODO">
+                    <span class="papertitle">Hierarchically Accelerated Coverage Path Planning for Redundant Manipulators</span>
+                  </a>
+                  <div class="authors">
+                    <strong>Yeping Wang</strong>,
+                    <a target="_blank"class="other_author" href="https://gleicher.sites.cs.wisc.edu/">Michael
+                      Gleicher</a>
+                  </div>
+                  <span class="conf"> ICRA'25 </span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                  [PDF to appear]
+                  &nbsp;•&nbsp;
+                  [Code to appear]
+                  <p>A motion planner that enables a robotic arm to coverage a surface with its end-effector.</p>
+                </td>
+              </tr>
+
+              <tr>
+                <td style="padding:10px;width:25%;vertical-align:middle">
+                  <div class="one">
+                    <img src='images/ral25.png' width="265">
+                  </div>
+                </td>
+                <td style="padding:20px;width:75%;vertical-align:middle">
+                  <a target="_blank"href="TODO">
+                    <span class="papertitle"> Anytime Planning for End-Effector Trajectory Tracking </span>
+                  </a>
+                  <div class="authors">
+                    <strong>Yeping Wang</strong>,
+                    <a target="_blank"class="other_author" href="https://gleicher.sites.cs.wisc.edu/">Michael
+                      Gleicher</a>
+                  </div>
+                  <span class="conf"> RAL </span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                  [PDF to appear]
+                  &nbsp;•&nbsp;
+                  <a target="_blank"href="https://github.com/uwgraphics/IKLink/tree/anytime"> Code </a> </p> 
+                  <p></p>
+                  <p>An fast motion planner that moves a robotic arm's end-effector along a trajectory.</p>
+                </td>
+              </tr>
+
+              <tr >
                 <td style="padding:10px;width:25%;vertical-align:middle">
                   <div class="one">
                     <img src='images/ral24.png' width="265">
                   </div>
                 </td>
                 <td style="padding:20px;width:75%;vertical-align:middle">
-                  <a target="_blank"href="TODO">
+                  <a target="_blank"href="https://arxiv.org/pdf/2407.02746">
                     <span class="papertitle"> Motion Comparator: Visual Comparison of Robot Motions </span>
                   </a>
                   <div class="authors">
@@ -219,7 +282,7 @@
                 </td>
               </tr>
 
-              <tr onmouseout="rangedik_study_stop()" onmouseover="rangedik_study_start()">
+              <tr>
                 <td style="padding:10px;width:25%;vertical-align:middle">
                   <div class="one">
                     <img src='images/iros23.jpg' width="265">
@@ -245,7 +308,7 @@
                 </td>
               </tr>
 
-              <tr onmouseout="periscope_stop()" onmouseover="periscope_start()">
+              <tr>
                 <td style="padding:10px;width:25%;vertical-align:middle">
                   <div class="one">
                     <img src='images/cscw23.png' width="265">

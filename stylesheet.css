@@ -56,6 +56,11 @@ h2 {
     font-size: 32px;
 }
 
+/* Chinese font class: use Noto Sans SC from Google as primary, with common CJK fallbacks */
+.zh {
+    font-family: 'Noto Sans SC', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', 'WenQuanYi Micro Hei', sans-serif;
+}
+
 .one {
     width: 265px;
     height: 160px;

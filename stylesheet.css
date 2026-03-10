@@ -1,33 +1,56 @@
+:root {
+    --bg-color: #ffffff;
+    --text-primary: #000000;
+    --link-color: #005EB8;
+    --link-hover-border: gray;
+    --conf-color: #5D6D7E;
+    --author-color: #5D6D7E;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --bg-color: #121212;
+        --text-primary: #e0e0e0;
+        --link-color: #8ab4f8;
+        --link-hover-border: #8ab4f8;
+        --conf-color: #9ea8b3;
+        --author-color: #9ea8b3;
+    }
+}
 
 body {
     font-family: 'Open Sans', sans-serif;
     line-height: 1.5em;
     font-size: 18px;
-    margin:20px;
-    padding:0;
+    margin: 0;
+    padding: 0;
+    background-color: var(--bg-color);
+    color: var(--text-primary);
+    transition: background-color 0.2s, color 0.2s;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 40px 20px;
 }
 
 a {
+    transition: color 0.1s ease;
 }
 
-a:link {
+a:link,
+a:visited {
     text-decoration: none;
-    /*border-bottom: 1px dotted;*/
-    color: #005EB8;
-    /*005EB8*/
+    color: var(--link-color);
 }
 
 a:hover {
-    border-bottom: 1px gray dotted;
-    /*color:#fff;*/
-}
-
-a:visited {
-    color: #005EB8;
+    border-bottom: 1px var(--link-hover-border) dotted;
 }
 
 a.other_author {
-    color: #000;
+    color: var(--text-primary);
 }
 
 strong {
@@ -35,30 +58,86 @@ strong {
 }
 
 h2 {
-    margin: 0;
+    margin: 40px 0 10px 0;
     font-weight: normal;
     font-size: 25px;
+    color: var(--text-primary);
 }
 
-.papertitle {
-    font-weight: bold;
-    color: #000;
+/* Header Section */
+.header {
+    display: flex;
+    flex-wrap: wrap-reverse;
+    margin-bottom: 30px;
+    gap: 30px;
 }
 
-.conf{
-    color: #5D6D7E;
-    font-style: italic;
+.header-text {
+    flex: 2;
+    min-width: 300px;
+}
+
+.header-text p {
+    text-align: left;
 }
 
 .name {
-    padding-top: 40px;
-    margin: 0;
+    padding-top: 0;
+    margin: 0 0 20px 0;
     font-size: 32px;
 }
 
-/* Chinese font class: use Noto Sans SC from Google as primary, with common CJK fallbacks */
 .zh {
-    font-family: 'Noto Sans SC', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', 'WenQuanYi Micro Hei', sans-serif;
+    font-family: 'Noto Sans SC', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+}
+
+.header-image {
+    flex: 1;
+    min-width: 250px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.bio-image-cropper {
+    width: 280px;
+    height: 280px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 60%;
+}
+
+.bio-image-cropper img {
+    width: 100%;
+    transform: scale(1.0);
+}
+
+.links {
+    margin-top: 20px;
+}
+
+/* Publications */
+.publications {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+}
+
+.paper {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 20px;
+    align-items: center;
+    padding: 10px 0;
+}
+
+.paper:first-child {
+    padding-top: 0;
+}
+
+.paper-media {
+    flex: 0 0 265px;
+    padding: 10px;
 }
 
 .one {
@@ -68,58 +147,68 @@ h2 {
     overflow: hidden;
 }
 
+/* Exact clone of John Barron image hover approach */
 .two {
     width: 265px;
-    height:160px;
+    height: 160px;
     position: absolute;
+    opacity: 0;
     transition: opacity .2s ease-in-out;
-    -moz-transition: opacity .2s ease-in-out;
-    -webkit-transition: opacity .2s ease-in-out;
 }
 
-.fade {
-    transition: opacity .2s ease-in-out;
-    -moz-transition: opacity .2s ease-in-out;
-    -webkit-transition: opacity .2s ease-in-out;
+.one:hover .two {
+    opacity: 1;
 }
 
-span.highlight {
-    background-color: #ffffd0;
+.paper-text {
+    flex: 1;
+    padding: 20px;
 }
 
-.bio-image-cropper {
-    width: 70%;
-    height: 70%;
-    position: relative;
-    overflow: hidden;
-    border-radius: 60%;
-    margin-left: auto;
-    margin-right: auto;
+.paper-text p {
+    margin: 5px 0;
 }
-  
-.bio-image-cropper img {
-    transform: scale(1.5) translate(-2%, 5%);
-    margin-left: auto;
-    margin-right: auto;
+
+.papertitle {
+    font-weight: bold;
+    color: var(--text-primary);
 }
 
 .authors {
     font-size: 18px;
-    color: #5D6D7E;
+    color: var(--author-color);
+    margin: 8px 0;
 }
 
 .authors a {
-    color: #5D6D7E;
+    color: var(--author-color);
 }
 
-/* .image-cropper {
-    width: 70%;
-    height: 70%;
-    position: relative;
-    overflow: hidden;
-    border-radius: 60%;
+.conf {
+    color: var(--conf-color);
+    font-style: italic;
 }
-  
-.image-cropper img {
-    transform: scale(1.5) translate(-2%, 5%);
-} */
+
+@media (max-width: 768px) {
+    .header {
+        flex-direction: column-reverse;
+        align-items: center;
+    }
+
+    .header-text p {
+        text-align: center;
+    }
+
+    .header-image {
+        justify-content: center;
+    }
+
+    .paper {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .paper-text {
+        padding: 5px 10px;
+    }
+}

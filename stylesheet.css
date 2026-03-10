@@ -1,42 +1,45 @@
 :root {
     --bg-color: #ffffff;
-    --text-primary: #000000;
-    --link-color: #005EB8;
-    --link-hover-border: gray;
-    --conf-color: #5D6D7E;
-    --author-color: #5D6D7E;
+    --text-primary: #1a1a1a;
+    --link-color: #1a56db;
+    --link-hover-border: #1a56db;
+    --conf-color: #4b5563;
+    --author-color: #374151;
 }
 
 @media (prefers-color-scheme: dark) {
     :root {
         --bg-color: #121212;
-        --text-primary: #e0e0e0;
-        --link-color: #8ab4f8;
-        --link-hover-border: #8ab4f8;
-        --conf-color: #9ea8b3;
-        --author-color: #9ea8b3;
+        --text-primary: #f3f4f6;
+        --link-color: #60a5fa;
+        --link-hover-border: #60a5fa;
+        --conf-color: #9ca3af;
+        --author-color: #e5e7eb;
     }
 }
 
 body {
-    font-family: 'Open Sans', sans-serif;
-    line-height: 1.5em;
-    font-size: 18px;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    line-height: 1.6;
+    font-size: 16px;
     margin: 0;
     padding: 0;
     background-color: var(--bg-color);
     color: var(--text-primary);
     transition: background-color 0.2s, color 0.2s;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 .container {
-    max-width: 1100px;
+    max-width: 910px;
+    /* Slightly wider to prevent the orphan word */
     margin: 0 auto;
-    padding: 40px 20px;
+    padding: 60px 40px;
 }
 
 a {
-    transition: color 0.1s ease;
+    transition: color 0.15s ease, border-bottom-color 0.15s ease;
 }
 
 a:link,
@@ -84,7 +87,11 @@ h2 {
 .name {
     padding-top: 0;
     margin: 0 0 20px 0;
-    font-size: 32px;
+    font-size: 36px;
+    font-weight: 500;
+    /* Reduced from 700 */
+    letter-spacing: -0.01em;
+    /* Subtler tracking */
 }
 
 .zh {
@@ -104,7 +111,17 @@ h2 {
     height: 280px;
     position: relative;
     overflow: hidden;
-    border-radius: 60%;
+    border-radius: 50%;
+    /* Perfect circle */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    /* Subtle premium shadow */
+    border: 3px solid rgba(255, 255, 255, 0.8);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.bio-image-cropper:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
 }
 
 .bio-image-cropper img {
@@ -128,16 +145,31 @@ h2 {
     flex-wrap: nowrap;
     gap: 20px;
     align-items: center;
-    padding: 10px 0;
+    padding: 15px 10px;
+    margin: 0 -10px;
+    /* offset the horizontal padding */
+    border-radius: 12px;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.paper:hover {
+    background-color: rgba(0, 0, 0, 0.02);
+}
+
+@media (prefers-color-scheme: dark) {
+    .paper:hover {
+        background-color: rgba(255, 255, 255, 0.03);
+    }
 }
 
 .paper:first-child {
-    padding-top: 0;
+    padding-top: 10px;
 }
 
 .paper-media {
     flex: 0 0 265px;
-    padding: 10px;
+    padding: 0 20px 0 0;
+    /* Only right padding */
 }
 
 .one {
@@ -145,6 +177,23 @@ h2 {
     height: 160px;
     position: relative;
     overflow: hidden;
+    border-radius: 6px;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1), 0 0 0 1px rgba(0, 0, 0, 0.05);
+}
+
+@media (prefers-color-scheme: dark) {
+    .one {
+        box-shadow: 0 1px 4px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(255, 255, 255, 0.05);
+    }
+}
+
+.one img,
+.one video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* Changed to cover to fill the div without gaps/borders */
+    display: block;
 }
 
 /* Exact clone of John Barron image hover approach */
@@ -170,14 +219,17 @@ h2 {
 }
 
 .papertitle {
-    font-weight: bold;
+    font-weight: 700;
+    font-size: 18px;
+    /* Tweak up */
     color: var(--text-primary);
 }
 
 .authors {
-    font-size: 18px;
+    font-size: 15px;
+    /* Tweak down from 18px */
     color: var(--author-color);
-    margin: 8px 0;
+    margin: 6px 0;
 }
 
 .authors a {
@@ -186,7 +238,7 @@ h2 {
 
 .conf {
     color: var(--conf-color);
-    font-style: italic;
+    font-weight: 500;
 }
 
 @media (max-width: 768px) {
@@ -205,10 +257,17 @@ h2 {
 
     .paper {
         flex-direction: column;
-        align-items: flex-start;
+        align-items: stretch;
+    }
+
+    .paper-media {
+        flex: 0 0 auto;
+        align-self: center;
+        padding: 10px 0 0 0;
     }
 
     .paper-text {
-        padding: 5px 10px;
+        padding: 10px 0;
+        text-align: left;
     }
 }

@@ -196,6 +196,25 @@ h2 {
     display: block;
 }
 
+.one.rla-wm-thumb img,
+.one.rla-wm-thumb video {
+    object-fit: contain;
+    object-position: center;
+    background: #fff;
+}
+
+.one.rla-wm-thumb>img {
+    width: calc(100% - 22px);
+    height: calc(100% - 22px);
+    margin: 11px;
+}
+
+.one.rla-wm-thumb .two video {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+}
+
 /* Exact clone of John Barron image hover approach */
 .two {
     width: 265px;
